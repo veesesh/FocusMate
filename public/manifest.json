@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "Tab Tracker",
+    "version": "1.0",
+    "icon" : {
+
+      "50": "icon.png"
+    },
+    "description": "This is for my pomodoro timer",
+    "permissions": ["tabs", "storage", "activeTab", "alarms", "scripting"],
+    "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+ 
+    "background": {
+      "service_worker": "background.js"
+    },
+    
+    "action": {
+        "default icon": "icon.png",
+        "default title": "Focus Mate",
+        "default_popup": "index.html"
+    }
+  }
+  

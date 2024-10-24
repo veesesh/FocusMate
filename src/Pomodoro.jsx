@@ -3,7 +3,7 @@ import "./index.css";
 
 const Pomodoro = () => {
   // 1500 is 25 x 60 s
-  const [timeLeft, setTimeLeft] = useState(5);
+  const [timeLeft, setTimeLeft] = useState(1500);
   const [isActive, setIsActive] = useState(false);
 
   //  time in MM:SS
@@ -48,6 +48,27 @@ const Pomodoro = () => {
     }
     return () => clearInterval(timer);
   }, [isActive, timeLeft]);
+  /*
+
+  // Listen for messages from the Chrome extension background script
+  useEffect(() => {
+    const handleMessage = (message) => {
+      if (message.action === "startTimer") {
+        startTimer();
+      } else if (message.action === "pauseTimer") {
+        pauseTimer();
+      }
+    };
+
+    // Add listener for Chrome extension messages
+    chrome.runtime.onMessage.addListener(handleMessage);
+
+    // Cleanup listener on component unmount
+    return () => {
+      chrome.runtime.onMessage.removeListener(handleMessage);
+    };
+  }, []);
+*/
 
   return (
     <div className="container">
